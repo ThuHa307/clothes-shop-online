@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Your Page Title</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
         <!-- Custom CSS -->
@@ -13,10 +13,7 @@
         <style>
             a {
                 color: black;
-            }
-            a:hover {
-                text-decoration: none;
-                color: black;
+                text-decoration: none !important;
             }
             ul {
                 padding: 0;
@@ -132,37 +129,11 @@
                 display: none;
                 font-size: 16px;
             }
-            .navbar-nav > li {
-                position: static;
-            }
-            .navbar-nav > li.active > a {
-                color: black;
-            }
-            .navbar-nav > li > a {
-                color: #333;
-                font-size: 14px;
-
-                text-transform: uppercase;
-                transition: 0.2s ease-in-out 0s;
-                border: 1px solid transparent;
-            }
-            .navbar-nav > li > a:hover,
-            .navbar-nav > li > a:active,
-            .navbar-nav > li > a:focus {
-                background: none;
-                color: black;
-            }
+            
             .navigation .container {
                 position: relative;
             }
-            .open > a {
-                border: 1px solid transparent;
-                background-color: transparent;
-            }
-            .navbar-nav {
-                float: none;
-                display: inline-block;
-            }
+            
             .dropdown {
                 padding: 20px 15px;
             }
@@ -171,7 +142,8 @@
                 right: auto;
                 border: none;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                padding: 15px;
+                padding: 15px;          
+                width: max-content;
             }
             .dropdown-menu li > a {
                 color: #222;
@@ -204,11 +176,18 @@
                 overflow: hidden;
                 background-color: #e5e5e5;
             }
+            .container.navigation {
+                display: flex;
+                justify-content: center;
+            }
+            .nav-option {
+                margin: 0 15px;
+            }
         </style>
     </head>
     <body>
         <section class="top-header">
-            <div class="container">
+            <div class="container ">
                 <div class="row">
                     <div class="col-md-4 col-xs-12 col-sm-4">
                         <!-- Search -->
@@ -256,137 +235,97 @@
         </section>
 
         <section class="menu">
-            <nav class="navbar navigation navbar-expand-lg">
-                <div class="container">
-                    <div class="collapse navbar-collapse text-center" id="navbar">
-                        <ul class="nav navbar-nav">
+            <div class="container navigation">
+                <div class="nav-option">
+                    <a href="#">Home</a>
+                </div>
+                <div class="dropdown-center nav-option">
+                    <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Shop <span class="tf-ion-ios-arrow-down"></span></a>
+                    <div class="dropdown-menu">
+                        <div class="row">
 
-                            <!-- Home -->
-                            <li class="dropdown ">
-                                <a href="index.html">Home</a>
-                            </li><!-- / Home -->
+                            <!-- Basic -->
+                            <div class="col-lg-6 col-md-6 mb-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Pages</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="shop.html">Shop</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="cart.html">Cart</a></li>
+                                    <li><a href="pricing.html">Pricing</a></li>
+                                    <li><a href="confirmation.html">Confirmation</a></li>
 
-
-                            <!-- Elements -->
-                            <li class="dropdown dropdown-slide">
-                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Shop <span class="tf-ion-ios-arrow-down"></span></a>
-                                <div class="dropdown-menu">
-                                    <div class="row">
-
-                                        <!-- Basic -->
-                                        <div class="col-lg-6 col-md-6 mb-sm-3">
-                                            <ul>
-                                                <li class="dropdown-header">Pages</li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="checkout.html">Checkout</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="confirmation.html">Confirmation</a></li>
-
-                                            </ul>
-                                        </div>
-
-                                        <!-- Layout -->
-                                        <div class="col-lg-6 col-md-6 mb-sm-3">
-                                            <ul>
-                                                <li class="dropdown-header">Layout</li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="product-single.html">Product Details</a></li>
-                                                <li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
-
-                                            </ul>
-                                        </div>
-
-                                    </div><!-- / .row -->
-                                </div><!-- / .dropdown-menu -->
-                            </li><!-- / Elements -->
-
-
-                            <!-- Pages -->
-                            <li class="dropdown full-width dropdown-slide">
-                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="tf-ion-ios-arrow-down"></span></a>
-                                <div class="dropdown-menu">
-                                    <div class="row">
-
-                                        <!-- Introduction -->
-                                        <div class="col-sm-3 col-xs-12">
-                                            <ul>
-                                                <li class="dropdown-header">Introduction</li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="contact.html">Contact Us</a></li>
-                                                <li><a href="about.html">About Us</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Contact -->
-                                        <div class="col-sm-3 col-xs-12">
-                                            <ul>
-                                                <li class="dropdown-header">Dashboard</li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="dashboard.html">User Interface</a></li>
-                                                <li><a href="order.html">Orders</a></li>
-                                                <li><a href="address.html">Address</a></li>
-                                                <li><a href="profile-details.html">Profile Details</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Utility -->
-                                        <div class="col-sm-3 col-xs-12">
-                                            <ul>
-                                                <li class="dropdown-header">Utility</li>
-                                                <li role="separator" class="divider"></li>
-                                                <li><a href="login.html">Login Page</a></li>
-                                                <li><a href="signin.html">Signin Page</a></li>
-                                                <li><a href="forget-password.html">Forget Password</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <!-- Mega Menu -->
-                                        <div class="col-sm-3 col-xs-12">
-                                            <a href="shop.html">
-                                                <img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image">
-                                            </a>
-                                        </div>
-                                    </div><!-- / .row -->
-                                </div><!-- / .dropdown-menu -->
-                            </li><!-- / Pages -->
-
-
-
-                            <!-- Blog -->
-                            <li class="dropdown dropdown-slide">
-                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="tf-ion-ios-arrow-down"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-full-width.html">Blog Full Width</a></li>
-                                    <li><a href="blog-grid.html">Blog 2 Columns</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
                                 </ul>
-                            </li><!-- / Blog -->
+                            </div>
 
-                            <!-- Shop -->
-                            <li class="dropdown dropdown-slide">
-                                <a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Elements <span class="tf-ion-ios-arrow-down"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="typography.html">Typography</a></li>
-                                    <li><a href="buttons.html">Buttons</a></li>
-                                    <li><a href="alerts.html">Alerts</a></li>
+                            <!-- Layout -->
+                            <div class="col-lg-6 col-md-6 mb-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Layout</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="product-single.html">Product Details</a></li>
+                                    <li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
+
                                 </ul>
-                            </li><!-- / Blog -->
-                        </ul>
-                    </div><!--/.navbar-collapse -->
-                </div><!-- / .container -->
-            </nav>
+                            </div>
+
+                        </div><!-- / .row -->
+                    </div><!-- / .dropdown-menu -->
+                </div>
+                <div class="dropdown-center nav-option">
+                    <a href="#!" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages <span class="tf-ion-ios-arrow-down"></span></a>
+                    <div class="dropdown-menu">
+                        <div class="row">
+
+                            <!-- Introduction -->
+                            <div class="col-sm-3 col-xs-12">
+                                <ul>
+                                    <li class="dropdown-header">Introduction</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="404.html">404 Page</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="col-sm-3 col-xs-12">
+                                <ul>
+                                    <li class="dropdown-header">Dashboard</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="dashboard.html">User Interface</a></li>
+                                    <li><a href="order.html">Orders</a></li>
+                                    <li><a href="address.html">Address</a></li>
+                                    <li><a href="profile-details.html">Profile Details</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Utility -->
+                            <div class="col-sm-3 col-xs-12">
+                                <ul>
+                                    <li class="dropdown-header">Utility</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="login.html">Login Page</a></li>
+                                    <li><a href="signin.html">Signin Page</a></li>
+                                    <li><a href="forget-password.html">Forget Password</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Mega Menu -->
+                            <div class="col-sm-3 col-xs-12">
+                                <a href="shop.html">
+                                    <img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image">
+                                </a>
+                            </div>
+                        </div><!-- / .row -->
+                    </div>
+                </div>
+            </div>
+
         </section>
 
-        <!-- Bootstrap JS and jQuery (optional) -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     </body>
 </html>
